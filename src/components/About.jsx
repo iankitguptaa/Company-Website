@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building2, Award, Users2, Clock, CheckCircle2, ShieldCheck, HeartHandshake, Rocket } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const statistics = [
@@ -16,12 +17,36 @@ export default function About() {
     { title: 'Future-Proof Tech', desc: 'Leveraging modern web, cloud, and AI technology stacks.' },
   ];
 
+  const statsContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const statItem = {
+    hidden: { opacity: 0, scale: 0.9, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: 'easeOut' },
+    },
+  };
+
   return (
     <section id="about" className="py-24 bg-[#0a0a0c] border-y border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
           {/* Left Story Column */}
-          <div className="lg:col-span-7 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 space-y-6"
+          >
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-xs font-mono text-[#0070f3]">
               <Building2 className="w-3.5 h-3.5 text-cyan-400" />
               ABOUT VERTEXIQ
@@ -43,21 +68,34 @@ export default function About() {
             {/* Values Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               {coreValues.map((val, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3.5 glass-card rounded-xl">
+                <motion.div 
+                  key={idx} 
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-start gap-3 p-3.5 glass-card rounded-xl"
+                >
                   <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-white">{val.title}</h4>
                     <p className="text-[11px] text-[#a1a1a1] mt-0.5">{val.desc}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Logo Showcase Frame */}
-          <div className="lg:col-span-5">
+          <motion.div 
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5"
+          >
             <div className="relative rounded-2xl glass-card p-8 text-center space-y-6 shadow-2xl border border-white/15">
-              <div className="inline-block p-4 bg-white rounded-2xl border border-white/20 shadow-lg max-w-[240px] mx-auto">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="inline-block p-4 bg-white rounded-2xl border border-white/20 shadow-lg max-w-[240px] mx-auto transition-transform"
+              >
                 <img
                   src="/logo.png"
                   alt="VertexIQ Technologies Official Logo"
@@ -67,7 +105,7 @@ export default function About() {
                     e.target.src = '/logo.jpg';
                   }}
                 />
-              </div>
+              </motion.div>
 
               <div className="space-y-2">
                 <h3 className="text-xl font-bold tracking-tight text-white">VertexIQ Technologies</h3>
@@ -85,16 +123,24 @@ export default function About() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8 border-t border-white/10">
+        <motion.div 
+          variants={statsContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8 border-t border-white/10"
+        >
           {statistics.map((stat, idx) => {
             const StatIcon = stat.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
+                variants={statItem}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="glass-card glass-card-hover rounded-2xl p-6 text-center"
               >
                 <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mx-auto mb-3 text-cyan-400">
@@ -105,10 +151,10 @@ export default function About() {
                 </div>
                 <div className="text-xs font-bold text-white mt-1">{stat.label}</div>
                 <div className="text-[11px] text-[#a1a1a1] font-mono mt-0.5">{stat.sub}</div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

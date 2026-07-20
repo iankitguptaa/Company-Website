@@ -84,11 +84,10 @@ export default function Navbar({ onOpenConsultation }) {
     <header className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-3 sm:px-6 lg:px-8 transition-all duration-300">
       {/* Floating Glassmorphic Container */}
       <div
-        className={`max-w-7xl mx-auto rounded-xl sm:rounded-full transition-all duration-300 border ${
-          isScrolled
+        className={`max-w-7xl mx-auto rounded-xl sm:rounded-full transition-all duration-300 border ${isScrolled
             ? 'bg-white/[0.08] backdrop-blur-2xl backdrop-saturate-150 border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] py-2 sm:py-2.5 px-3 sm:px-6'
-            : 'bg-white/[0.04] backdrop-blur-xl border-white/15 py-2.5 sm:py-3 px-3 sm:px-6'
-        }`}
+            : 'bg-[#ffffff]/[0.04] backdrop-blur-xl border-white/15 py-2.5 sm:py-3 px-3 sm:px-6'
+          }`}
       >
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
@@ -125,11 +124,10 @@ export default function Navbar({ onOpenConsultation }) {
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href, link.id)}
-                className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
-                  activeSection === link.id
+                className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${activeSection === link.id
                     ? 'bg-white text-black font-semibold shadow-[0_0_15px_rgba(255,255,255,0.4)]'
                     : 'text-[#a1a1a1] hover:text-white hover:bg-white/10'
-                }`}
+                  }`}
               >
                 {link.name}
               </a>
@@ -169,11 +167,10 @@ export default function Navbar({ onOpenConsultation }) {
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href, link.id)}
-                className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                  activeSection === link.id
+                className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-colors ${activeSection === link.id
                     ? 'bg-white text-black font-semibold'
                     : 'text-[#a1a1a1] hover:bg-white/10 hover:text-white'
-                }`}
+                  }`}
               >
                 <span>{link.name}</span>
                 <ChevronRight className="w-4 h-4 opacity-60" />

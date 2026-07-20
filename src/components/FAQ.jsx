@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown, Sparkles, MessageSquare } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -45,7 +46,13 @@ export default function FAQ() {
     <section id="faq" className="min-h-[85vh] py-28 sm:py-36 bg-[#0a0a0c] border-y border-white/10 scroll-mt-24 flex flex-col justify-center">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-4 mb-16"
+        >
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-pill text-xs font-mono text-cyan-400">
             <HelpCircle className="w-3.5 h-3.5" />
             FREQUENTLY ASKED QUESTIONS
@@ -56,45 +63,68 @@ export default function FAQ() {
           <p className="text-base sm:text-lg text-[#a1a1a1]">
             Everything you need to know about partnering with VertexIQ Technologies.
           </p>
-        </div>
+        </motion.div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6 }}
+          className="space-y-4"
+        >
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className="glass-card rounded-2xl border border-white/10 overflow-hidden transition-all duration-200"
+                className="glass-card rounded-2xl border border-white/10 overflow-hidden transition-colors"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
+                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none group cursor-pointer"
                 >
                   <span className="text-base sm:text-lg font-bold text-white group-hover:text-cyan-400 transition-colors pr-4">
                     {faq.question}
                   </span>
-                  <div
-                    className={`w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 text-white transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-white/15 text-cyan-400' : ''
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className={`w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 text-white ${
+                      isOpen ? 'bg-white/15 text-cyan-400' : ''
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
-                  </div>
+                  </motion.div>
                 </button>
 
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-sm text-[#a1a1a1] leading-relaxed border-t border-white/5 animate-fade-in">
-                    <p className="pt-4">{faq.answer}</p>
-                  </div>
-                )}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <div className="px-6 pb-6 pt-0 text-sm text-[#a1a1a1] leading-relaxed border-t border-white/5">
+                        <p className="pt-4">{faq.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Bottom Contact Help Box */}
-        <div className="mt-12 text-center p-6 rounded-2xl glass-card border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 text-center p-6 rounded-2xl glass-card border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
           <div className="flex items-center gap-3 text-left">
             <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-cyan-400">
               <MessageSquare className="w-5 h-5" />
@@ -104,13 +134,15 @@ export default function FAQ() {
               <p className="text-xs text-[#a1a1a1]">Our engineering architects are here to help you.</p>
             </div>
           </div>
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(255,255,255,0.4)' }}
+            whileTap={{ scale: 0.95 }}
             href="#contact"
-            className="px-6 py-2.5 text-xs font-semibold text-black bg-white rounded-full hover:bg-neutral-200 transition-colors whitespace-nowrap glow-white"
+            className="px-6 py-2.5 text-xs font-semibold text-black bg-white rounded-full hover:bg-neutral-200 transition-colors whitespace-nowrap cursor-pointer"
           >
             Ask Us Anything
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, MessageSquareQuote, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Testimonials() {
   const testimonials = [
@@ -35,11 +36,34 @@ export default function Testimonials() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
   return (
     <section id="testimonials" className="py-24 bg-[#0a0a0c] border-y border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-4 mb-16"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-xs font-mono text-cyan-400">
             <MessageSquareQuote className="w-3.5 h-3.5" />
             CLIENT TRUST & FEEDBACK
@@ -50,13 +74,21 @@ export default function Testimonials() {
           <p className="text-base sm:text-lg text-[#a1a1a1]">
             Don't just take our word for it — hear from founders and tech executives who scaled their products with VertexIQ.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3 Professional Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {testimonials.map((item) => (
-            <div
+            <motion.div
               key={item.id}
+              variants={itemVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between"
             >
               <div className="space-y-4">
@@ -92,9 +124,9 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

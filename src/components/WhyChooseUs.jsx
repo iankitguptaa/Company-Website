@@ -10,6 +10,7 @@ import {
   Headphones,
   Sparkles,
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function WhyChooseUs() {
   const pillars = [
@@ -55,11 +56,34 @@ export default function WhyChooseUs() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: 'easeOut' },
+    },
+  };
+
   return (
     <section id="why-choose-us" className="py-24 bg-[#0d0d12] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-4 mb-16"
+        >
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-pill text-xs font-mono text-cyan-400">
             <Sparkles className="w-3.5 h-3.5" />
             THE VERTEXIQ ADVANTAGE
@@ -70,15 +94,23 @@ export default function WhyChooseUs() {
           <p className="text-base sm:text-lg text-[#a1a1a1]">
             We bridge technical mastery with business acumen to deliver software that doesn't just work — it propels your growth.
           </p>
-        </div>
+        </motion.div>
 
         {/* 8-Grid Pillars */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {pillars.map((pillar, idx) => {
             const IconComponent = pillar.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
+                variants={itemVariants}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between"
               >
                 <div>
@@ -88,24 +120,32 @@ export default function WhyChooseUs() {
                   <h3 className="text-lg font-bold text-white mb-2">{pillar.title}</h3>
                   <p className="text-xs text-[#a1a1a1] leading-relaxed">{pillar.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Stat Highlights Callout */}
-        <div className="mt-14 p-8 rounded-2xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/15 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-14 p-8 rounded-2xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/15 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl"
+        >
           <div>
             <h4 className="text-xl font-bold text-white">Ready to turn your vision into scalable code?</h4>
             <p className="text-xs text-[#a1a1a1] mt-1">Our engineering squad is ready to start your project within 48 hours.</p>
           </div>
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(255,255,255,0.4)' }}
+            whileTap={{ scale: 0.95 }}
             href="#contact"
-            className="px-7 py-3.5 text-xs font-bold text-black bg-white rounded-full hover:bg-neutral-200 transition-colors whitespace-nowrap glow-white"
+            className="px-7 py-3.5 text-xs font-bold text-black bg-white rounded-full hover:bg-neutral-200 transition-colors whitespace-nowrap cursor-pointer"
           >
             Start Your Project Today
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

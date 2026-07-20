@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Cpu, Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Technologies() {
   const [activeTab, setActiveTab] = useState('All');
@@ -78,7 +79,13 @@ export default function Technologies() {
     <section id="technologies" className="py-20 sm:py-24 bg-[#0a0a0c] border-y border-white/10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-8 sm:mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-8 sm:mb-12"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-xs font-mono text-[#0070f3]">
             <Cpu className="w-3.5 h-3.5 text-cyan-400" />
             MODERN TECH STACK
@@ -89,51 +96,70 @@ export default function Technologies() {
           <p className="text-sm sm:text-lg text-[#a1a1a1]">
             We leverage industry-standard frameworks, languages, and cloud platforms to construct resilient and maintainable software.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Filter Tabs (Mobile Scrollable) */}
+        {/* Filter Tabs */}
         <div className="flex items-center justify-start sm:justify-center gap-2 mb-8 sm:mb-12 overflow-x-auto no-scrollbar py-2 px-1">
-          {categories.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 text-xs font-semibold rounded-full transition-all duration-200 whitespace-nowrap ${
-                activeTab === tab
-                  ? 'bg-white text-black font-semibold shadow-md'
-                  : 'bg-white/5 border border-white/10 text-[#a1a1a1] hover:text-white hover:bg-white/10'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+          {categories.map((tab) => {
+            const isActive = activeTab === tab;
+            return (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`relative px-4 py-2 text-xs font-semibold rounded-full transition-colors duration-200 whitespace-nowrap cursor-pointer ${
+                  isActive ? 'text-black font-semibold' : 'text-[#a1a1a1] hover:text-white'
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeTechTab"
+                    className="absolute inset-0 bg-white rounded-full shadow-md"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{tab}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Technology Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
-          {filteredTech.map((tech) => (
-            <div
-              key={tech.name}
-              className="glass-card glass-card-hover rounded-xl p-5 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-lg font-bold text-white">{tech.name}</h3>
-                  <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-white/10 border border-white/15 text-[#a1a1a1]">
-                    {tech.badge}
-                  </span>
+        <motion.div 
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredTech.map((tech) => (
+              <motion.div
+                key={tech.name}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ y: -4, transition: { duration: 0.15 } }}
+                className="glass-card glass-card-hover rounded-xl p-5 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-lg font-bold text-white">{tech.name}</h3>
+                    <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-white/10 border border-white/15 text-[#a1a1a1]">
+                      {tech.badge}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#a1a1a1] leading-relaxed mb-4">
+                    {tech.description}
+                  </p>
                 </div>
-                <p className="text-xs text-[#a1a1a1] leading-relaxed mb-4">
-                  {tech.description}
-                </p>
-              </div>
 
-              <div className="flex items-center gap-1.5 text-[11px] font-mono text-cyan-400 pt-3 border-t border-white/5">
-                <Check className="w-3.5 h-3.5" />
-                <span>Production Standard</span>
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="flex items-center gap-1.5 text-[11px] font-mono text-cyan-400 pt-3 border-t border-white/5">
+                  <Check className="w-3.5 h-3.5" />
+                  <span>Production Standard</span>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

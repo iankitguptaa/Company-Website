@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Check,
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Services({ onOpenConsultation }) {
   const servicesList = [
@@ -75,11 +76,36 @@ export default function Services({ onOpenConsultation }) {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
   return (
     <section id="services" className="py-24 bg-[#0a0a0c] border-y border-white/10 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header (Matching Reference Image 2 style) */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto space-y-3 mb-16"
+        >
           <div className="text-xs font-mono tracking-widest text-[#a1a1a1] uppercase">
             DIVERSE CAPABILITIES
           </div>
@@ -89,15 +115,23 @@ export default function Services({ onOpenConsultation }) {
           <p className="text-sm sm:text-base text-[#a1a1a1]">
             Explore dedicated workflows custom-tailored for the unique demands of each digital product.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Services Dark Glassmorphic Grid (Inspired by Reference Image 2) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Services Dark Glassmorphic Grid */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {servicesList.map((service) => {
             const IconComponent = service.icon;
             return (
-              <div
+              <motion.div
                 key={service.id}
+                variants={itemVariants}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="group relative rounded-2xl overflow-hidden glass-card glass-card-hover flex flex-col justify-between"
               >
                 {/* Background Image Container with Gradient Overlay */}
@@ -146,7 +180,7 @@ export default function Services({ onOpenConsultation }) {
                 <div className="p-6 pt-0 border-t border-white/5">
                   <button
                     onClick={() => onOpenConsultation(service.title)}
-                    className="w-full flex items-center justify-between text-xs font-semibold text-[#a1a1a1] group-hover:text-white transition-colors pt-3"
+                    className="w-full flex items-center justify-between text-xs font-semibold text-[#a1a1a1] group-hover:text-white transition-colors pt-3 cursor-pointer"
                   >
                     <span>Request Service</span>
                     <span className="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
@@ -154,10 +188,10 @@ export default function Services({ onOpenConsultation }) {
                     </span>
                   </button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
