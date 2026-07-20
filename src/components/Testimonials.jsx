@@ -1,0 +1,101 @@
+import React from 'react';
+import { Star, MessageSquareQuote, CheckCircle2 } from 'lucide-react';
+
+export default function Testimonials() {
+  const testimonials = [
+    {
+      id: 1,
+      quote:
+        'VertexIQ Technologies delivered our complex SaaS web app ahead of schedule. Their attention to clean architecture, API speed, and modern UI design completely transformed our user acquisition.',
+      name: 'Sarah Jenkins',
+      title: 'CTO & Co-Founder',
+      company: 'FinPulse Systems',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+      stars: 5,
+    },
+    {
+      id: 2,
+      quote:
+        'Working with VertexIQ felt like having an elite in-house engineering team. They designed our AI workflow automation pipeline with incredible precision, clear daily communication, and zero hidden costs.',
+      name: 'Marcus Vance',
+      title: 'Head of Product',
+      company: 'OmniStream Media',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+      stars: 5,
+    },
+    {
+      id: 3,
+      quote:
+        'The mobile application they built for iOS and Android achieved a 4.9-star rating on the App Store. VertexIQ handled everything from UI wireframes to AWS deployment seamlessly. Highly recommended!',
+      name: 'David Chen',
+      title: 'Founder & CEO',
+      company: 'HealthConnect Global',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+      stars: 5,
+    },
+  ];
+
+  return (
+    <section id="testimonials" className="py-24 bg-[#0a0a0c] border-y border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-xs font-mono text-cyan-400">
+            <MessageSquareQuote className="w-3.5 h-3.5" />
+            CLIENT TRUST & FEEDBACK
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+            What Our Partners Say
+          </h2>
+          <p className="text-base sm:text-lg text-[#a1a1a1]">
+            Don't just take our word for it — hear from founders and tech executives who scaled their products with VertexIQ.
+          </p>
+        </div>
+
+        {/* 3 Professional Testimonial Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((item) => (
+            <div
+              key={item.id}
+              className="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between"
+            >
+              <div className="space-y-4">
+                {/* Rating Stars */}
+                <div className="flex items-center gap-1">
+                  {[...Array(item.stars)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+
+                {/* Quote Text */}
+                <p className="text-sm text-[#d4d4d4] leading-relaxed italic">
+                  "{item.quote}"
+                </p>
+              </div>
+
+              {/* Client Profile Info */}
+              <div className="pt-6 border-t border-white/10 mt-6 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <img
+                    src={item.avatar}
+                    alt={item.name}
+                    className="w-11 h-11 rounded-full object-cover border border-white/15"
+                  />
+                  <div>
+                    <h4 className="text-sm font-bold text-white flex items-center gap-1">
+                      <span>{item.name}</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                    </h4>
+                    <p className="text-xs text-[#a1a1a1] font-mono">
+                      {item.title}, <span className="text-white font-semibold">{item.company}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
