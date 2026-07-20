@@ -131,29 +131,42 @@ export default function Services({ onOpenConsultation }) {
               <motion.div
                 key={service.id}
                 variants={itemVariants}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="group relative rounded-2xl overflow-hidden glass-card glass-card-hover flex flex-col justify-between"
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  boxShadow: '0 20px 40px -15px rgba(0, 112, 243, 0.3)',
+                  transition: { duration: 0.25, ease: 'easeOut' } 
+                }}
+                className="group relative rounded-2xl overflow-hidden glass-card glass-card-hover flex flex-col justify-between border border-white/10 hover:border-white/30"
               >
                 {/* Background Image Container with Gradient Overlay */}
                 <div className="relative h-44 overflow-hidden">
-                  <img
+                  <motion.img
+                    whileHover={{ scale: 1.12 }}
+                    transition={{ duration: 0.7 }}
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 group-hover:brightness-90"
+                    className="w-full h-full object-cover filter brightness-75 group-hover:brightness-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-[#0d0d12]/60 to-transparent" />
 
                   {/* Floating Icon Badge */}
                   <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <div className="p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white">
+                    <motion.div 
+                      whileHover={{ scale: 1.15, rotate: 6 }}
+                      className="p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-white transition-transform"
+                    >
                       <IconComponent className="w-5 h-5 text-cyan-400" />
-                    </div>
+                    </motion.div>
                   </div>
 
                   <div className="absolute top-4 right-4">
-                    <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white">
+                    <motion.span 
+                      whileHover={{ scale: 1.08 }}
+                      className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white inline-block"
+                    >
                       {service.badge}
-                    </span>
+                    </motion.span>
                   </div>
                 </div>
 
@@ -168,10 +181,14 @@ export default function Services({ onOpenConsultation }) {
 
                   <ul className="space-y-1.5 pt-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-xs text-[#d4d4d4]">
+                      <motion.li 
+                        key={idx} 
+                        whileHover={{ x: 3 }}
+                        className="flex items-center gap-2 text-xs text-[#d4d4d4] transition-transform"
+                      >
                         <Check className="w-3.5 h-3.5 text-[#0070f3] flex-shrink-0" />
                         <span>{feature}</span>
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
@@ -183,7 +200,7 @@ export default function Services({ onOpenConsultation }) {
                     className="w-full flex items-center justify-between text-xs font-semibold text-[#a1a1a1] group-hover:text-white transition-colors pt-3 cursor-pointer"
                   >
                     <span>Request Service</span>
-                    <span className="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span className="flex items-center gap-1 group-hover:translate-x-1.5 transition-transform">
                       Explore Service &gt;
                     </span>
                   </button>

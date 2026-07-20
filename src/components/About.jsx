@@ -70,8 +70,8 @@ export default function About() {
               {coreValues.map((val, idx) => (
                 <motion.div 
                   key={idx} 
-                  whileHover={{ scale: 1.02 }}
-                  className="flex items-start gap-3 p-3.5 glass-card rounded-xl"
+                  whileHover={{ scale: 1.03, y: -2, boxShadow: '0 10px 25px -5px rgba(0, 112, 243, 0.2)' }}
+                  className="flex items-start gap-3 p-3.5 glass-card rounded-xl border border-white/10 hover:border-white/25 transition-colors"
                 >
                   <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
                   <div>
@@ -140,13 +140,21 @@ export default function About() {
               <motion.div
                 key={idx}
                 variants={statItem}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="glass-card glass-card-hover rounded-2xl p-6 text-center"
+                whileHover={{ 
+                  y: -6, 
+                  scale: 1.05, 
+                  boxShadow: '0 15px 35px -10px rgba(0, 223, 216, 0.25)',
+                  transition: { duration: 0.2, ease: 'easeOut' }
+                }}
+                className="group glass-card glass-card-hover rounded-2xl p-6 text-center border border-white/10 hover:border-cyan-400/40"
               >
-                <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mx-auto mb-3 text-cyan-400">
+                <motion.div 
+                  whileHover={{ scale: 1.2, rotate: 8 }}
+                  className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mx-auto mb-3 text-cyan-400 group-hover:bg-cyan-500/10 group-hover:border-cyan-400/40 transition-colors"
+                >
                   <StatIcon className="w-5 h-5" />
-                </div>
-                <div className="text-3xl sm:text-4xl font-black tracking-tight text-white font-mono">
+                </motion.div>
+                <div className="text-3xl sm:text-4xl font-black tracking-tight text-white font-mono group-hover:text-cyan-400 transition-colors">
                   {stat.value}
                 </div>
                 <div className="text-xs font-bold text-white mt-1">{stat.label}</div>

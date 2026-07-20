@@ -88,19 +88,26 @@ export default function Testimonials() {
             <motion.div
               key={item.id}
               variants={itemVariants}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between"
+              whileHover={{ 
+                y: -8, 
+                scale: 1.03,
+                boxShadow: '0 20px 40px -15px rgba(0, 112, 243, 0.25)',
+                transition: { duration: 0.25, ease: 'easeOut' }
+              }}
+              className="group glass-card glass-card-hover rounded-2xl p-7 flex flex-col justify-between border border-white/10 hover:border-white/30"
             >
               <div className="space-y-4">
                 {/* Rating Stars */}
                 <div className="flex items-center gap-1">
                   {[...Array(item.stars)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <motion.div key={i} whileHover={{ scale: 1.25, rotate: 10 }}>
+                      <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    </motion.div>
                   ))}
                 </div>
 
                 {/* Quote Text */}
-                <p className="text-sm text-[#d4d4d4] leading-relaxed italic">
+                <p className="text-sm text-[#d4d4d4] leading-relaxed italic group-hover:text-white transition-colors">
                   "{item.quote}"
                 </p>
               </div>
@@ -108,13 +115,14 @@ export default function Testimonials() {
               {/* Client Profile Info */}
               <div className="pt-6 border-t border-white/10 mt-6 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <img
+                  <motion.img
+                    whileHover={{ scale: 1.15 }}
                     src={item.avatar}
                     alt={item.name}
-                    className="w-11 h-11 rounded-full object-cover border border-white/15"
+                    className="w-11 h-11 rounded-full object-cover border border-white/15 group-hover:border-cyan-400 transition-colors"
                   />
                   <div>
-                    <h4 className="text-sm font-bold text-white flex items-center gap-1">
+                    <h4 className="text-sm font-bold text-white flex items-center gap-1 group-hover:text-cyan-400 transition-colors">
                       <span>{item.name}</span>
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                     </h4>

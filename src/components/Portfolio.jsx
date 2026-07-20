@@ -150,16 +150,23 @@ export default function Portfolio({ onOpenConsultation }) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.92 }}
                 transition={{ duration: 0.35 }}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="group glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between"
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  boxShadow: '0 20px 40px -15px rgba(0, 112, 243, 0.3)',
+                  transition: { duration: 0.25, ease: 'easeOut' }
+                }}
+                className="group glass-card glass-card-hover rounded-2xl overflow-hidden flex flex-col justify-between border border-white/10 hover:border-cyan-400/40"
               >
                 <div>
                   {/* Image Container */}
                   <div className="relative h-44 sm:h-48 overflow-hidden">
-                    <img
+                    <motion.img
+                      whileHover={{ scale: 1.12 }}
+                      transition={{ duration: 0.7 }}
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-90 group-hover:brightness-100"
+                      className="w-full h-full object-cover filter brightness-90 group-hover:brightness-100"
                     />
                     <div className="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] font-semibold px-2.5 py-1 rounded-full backdrop-blur-md border border-white/15">
                       {project.category}
@@ -179,12 +186,13 @@ export default function Portfolio({ onOpenConsultation }) {
                     {/* Tech Tags */}
                     <div className="flex flex-wrap gap-1.5 pt-2">
                       {project.tech.map((t, i) => (
-                        <span
+                        <motion.span
                           key={i}
-                          className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-[#d4d4d4] border border-white/10"
+                          whileHover={{ scale: 1.08 }}
+                          className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-[#d4d4d4] border border-white/10 group-hover:border-white/20 transition-colors"
                         >
                           {t}
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
                   </div>

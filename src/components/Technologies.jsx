@@ -137,13 +137,18 @@ export default function Technologies() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                whileHover={{ y: -4, transition: { duration: 0.15 } }}
-                className="glass-card glass-card-hover rounded-xl p-5 flex flex-col justify-between"
+                whileHover={{ 
+                  y: -6, 
+                  scale: 1.04, 
+                  boxShadow: '0 15px 35px -10px rgba(0, 112, 243, 0.3)',
+                  transition: { duration: 0.2, ease: 'easeOut' } 
+                }}
+                className="group glass-card glass-card-hover rounded-xl p-5 flex flex-col justify-between border border-white/10 hover:border-cyan-400/40"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-bold text-white">{tech.name}</h3>
-                    <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-white/10 border border-white/15 text-[#a1a1a1]">
+                    <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">{tech.name}</h3>
+                    <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-white/10 border border-white/15 text-[#a1a1a1] group-hover:border-cyan-400/30 group-hover:text-white transition-colors">
                       {tech.badge}
                     </span>
                   </div>
