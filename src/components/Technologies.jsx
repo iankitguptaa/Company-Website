@@ -86,7 +86,7 @@ export default function Technologies() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-8 sm:mb-12"
         >
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-xs font-mono text-[#0070f3]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
             <Cpu className="w-3.5 h-3.5 text-cyan-400" />
             MODERN TECH STACK
           </div>

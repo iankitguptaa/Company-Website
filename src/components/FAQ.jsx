@@ -7,9 +7,9 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'What services does VertexIQ Technologies specialize in?',
+      question: 'What services does Monolith Codes specialize in?',
       answer:
-        'VertexIQ Technologies specializes in end-to-end custom software development, web applications, high-converting websites, mobile apps (iOS & Android), UI/UX design, AI solution integrations, cloud infrastructure, and 24/7 technical support.',
+        'Monolith Codes specializes in end-to-end custom software development, web applications, high-converting websites, mobile apps (iOS & Android), UI/UX design, AI solution integrations, cloud infrastructure, and 24/7 technical support.',
     },
     {
       question: 'How long does a typical software project take from start to finish?',
@@ -53,15 +53,15 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-4 mb-16"
         >
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-pill text-xs font-mono text-cyan-400">
-            <HelpCircle className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-pill text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
+            <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
             FREQUENTLY ASKED QUESTIONS
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Got Questions? We Have Answers.
           </h2>
           <p className="text-base sm:text-lg text-[#a1a1a1]">
-            Everything you need to know about partnering with VertexIQ Technologies.
+            Everything you need to know about partnering with Monolith Codes.
           </p>
         </motion.div>
 

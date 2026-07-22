@@ -106,7 +106,8 @@ export default function Services({ onOpenConsultation }) {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 mb-16"
         >
-          <div className="text-xs font-mono tracking-widest text-[#a1a1a1] uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
+            <Code className="w-3.5 h-3.5 text-cyan-400" />
             DIVERSE CAPABILITIES
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">

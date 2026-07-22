@@ -22,11 +22,11 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="bg-white p-1 rounded-lg"
+                className="bg-black p-1 rounded-lg border border-white/10"
               >
                 <img
                   src="/logo.png"
-                  alt="VertexIQ Technologies Logo"
+                  alt="Monolith Codes Logo"
                   className="h-8 w-auto object-contain"
                   onError={(e) => {
                     e.target.onerror = null;
@@ -35,12 +35,12 @@ export default function Footer() {
                 />
               </motion.div>
               <span className="text-xl font-bold tracking-tight text-white">
-                vertex<span className="text-[#0070f3]">IQ</span> <span className="text-xs font-mono font-normal text-[#888888]">TECHNOLOGIES</span>
+                Monolith <span className="text-[#0070f3]">Codes</span>
               </span>
             </div>
 
             <p className="text-xs text-[#a1a1a1] leading-relaxed max-w-sm">
-              VertexIQ Technologies is an IT agency focused on delivering innovative software solutions, web applications, mobile apps, AI engineering, and cloud architecture.
+              Monolith Codes is an IT agency focused on delivering innovative software solutions, web applications, mobile apps, AI engineering, and cloud architecture.
             </p>
 
             {/* Social Media Links */}
@@ -138,7 +138,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-[#a1a1a1]">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#0070f3]" />
-                <a href="mailto:contact@vertexiqtech.com" className="hover:text-white transition-colors">contact@vertexiqtech.com</a>
+                <a href="mailto:contact@monolithcodes.com" className="hover:text-white transition-colors">contact@monolithcodes.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#0070f3]" />
@@ -155,7 +155,7 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#888888] font-mono">
           <div>
-            Copyright © {new Date().getFullYear()} VertexIQ Technologies. All rights reserved.
+            Copyright © {new Date().getFullYear()} Monolith Codes. All rights reserved.
           </div>
           <div className="flex items-center space-x-4">
             <motion.button

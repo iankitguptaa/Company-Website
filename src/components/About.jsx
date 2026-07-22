@@ -40,16 +40,16 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
           {/* Left Story Column */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-xs font-mono text-[#0070f3]">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
               <Building2 className="w-3.5 h-3.5 text-cyan-400" />
-              ABOUT VERTEXIQ
+              ABOUT MONOLITH CODES
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -58,7 +58,7 @@ export default function About() {
             </h2>
 
             <p className="text-base sm:text-lg text-[#a1a1a1] leading-relaxed">
-              VertexIQ Technologies is a modern IT agency focused on delivering innovative software solutions for startups, SMEs, and enterprises. We transform ideas into scalable digital products with clean design, robust architecture, and modern technologies.
+              Monolith Codes is a modern IT agency focused on delivering innovative software solutions for startups, SMEs, and enterprises. We transform ideas into scalable digital products with clean design, robust architecture, and modern technologies.
             </p>
 
             <p className="text-sm text-[#a1a1a1] leading-relaxed">
@@ -68,8 +68,8 @@ export default function About() {
             {/* Values Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               {coreValues.map((val, idx) => (
-                <motion.div 
-                  key={idx} 
+                <motion.div
+                  key={idx}
                   whileHover={{ scale: 1.03, y: -2, boxShadow: '0 10px 25px -5px rgba(0, 112, 243, 0.2)' }}
                   className="flex items-start gap-3 p-3.5 glass-card rounded-xl border border-white/10 hover:border-white/25 transition-colors"
                 >
@@ -84,7 +84,7 @@ export default function About() {
           </motion.div>
 
           {/* Right Logo Showcase Frame */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
@@ -92,13 +92,13 @@ export default function About() {
             className="lg:col-span-5"
           >
             <div className="relative rounded-2xl glass-card p-8 text-center space-y-6 shadow-2xl border border-white/15">
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="inline-block p-4 bg-white rounded-2xl border border-white/20 shadow-lg max-w-[240px] mx-auto transition-transform"
+                className="inline-block p-4 bg-black rounded-2xl border border-white/20 shadow-lg max-w-[240px] mx-auto transition-transform"
               >
                 <img
                   src="/logo.png"
-                  alt="VertexIQ Technologies Official Logo"
+                  alt="Monolith Codes Official Logo"
                   className="w-full h-auto object-contain"
                   onError={(e) => {
                     e.target.onerror = null;
@@ -108,9 +108,9 @@ export default function About() {
               </motion.div>
 
               <div className="space-y-2">
-                <h3 className="text-xl font-bold tracking-tight text-white">VertexIQ Technologies</h3>
+                <h3 className="text-xl font-bold tracking-tight text-white">Monolith Codes</h3>
                 <p className="text-xs text-[#a1a1a1] max-w-sm mx-auto font-mono">
-                  Custom Software • Web & Mobile • AI & Cloud Solutions
+                  Custom Software • Web & Mobile
                 </p>
               </div>
 
@@ -127,7 +127,7 @@ export default function About() {
         </div>
 
         {/* Statistics Grid */}
-        <motion.div 
+        <motion.div
           variants={statsContainer}
           initial="hidden"
           whileInView="visible"
@@ -140,15 +140,15 @@ export default function About() {
               <motion.div
                 key={idx}
                 variants={statItem}
-                whileHover={{ 
-                  y: -6, 
-                  scale: 1.05, 
+                whileHover={{
+                  y: -6,
+                  scale: 1.05,
                   boxShadow: '0 15px 35px -10px rgba(0, 223, 216, 0.25)',
                   transition: { duration: 0.2, ease: 'easeOut' }
                 }}
                 className="group glass-card glass-card-hover rounded-2xl p-6 text-center border border-white/10 hover:border-cyan-400/40"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.2, rotate: 8 }}
                   className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mx-auto mb-3 text-cyan-400 group-hover:bg-cyan-500/10 group-hover:border-cyan-400/40 transition-colors"
                 >

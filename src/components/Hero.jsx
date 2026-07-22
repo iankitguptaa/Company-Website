@@ -87,15 +87,6 @@ export default function Hero({ onOpenConsultation }) {
               <span>Get Free Consultation</span>
               <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />
             </motion.button>
-
-            <motion.a
-              whileHover={{ scale: 1.04, backgroundColor: 'rgba(0,0,0,0.7)', borderColor: 'rgba(255,255,255,0.5)' }}
-              whileTap={{ scale: 0.96 }}
-              href="#portfolio"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-sm font-semibold text-white bg-black/50 border border-white/25 rounded-full transition-all backdrop-blur-md shadow-xl cursor-pointer"
-            >
-              <span>View Our Work</span>
-            </motion.a>
           </motion.div>
 
           {/* Code Terminal Mockup Window */}
@@ -111,7 +102,7 @@ export default function Hero({ onOpenConsultation }) {
                   <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#ff5f56]" />
                   <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#ffbd2e]" />
                   <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#27c93f]" />
-                  <span className="ml-1 sm:ml-2 font-mono text-[10px] sm:text-xs text-[#a1a1a1]">vertexiq-cli v2.4</span>
+                  <span className="ml-1 sm:ml-2 font-mono text-[10px] sm:text-xs text-[#a1a1a1]">monolith-cli v2.4</span>
                 </div>
                 <span className="text-[10px] sm:text-xs font-mono text-cyan-400 flex items-center gap-1">
                   <Cpu className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> High-Performance Engine
@@ -121,7 +112,7 @@ export default function Hero({ onOpenConsultation }) {
               <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs leading-relaxed text-[#d4d4d4] space-y-2 overflow-x-auto">
                 <div className="flex items-center gap-2 text-emerald-400">
                   <Terminal className="w-4 h-4 flex-shrink-0" />
-                  <span className="whitespace-nowrap">$ npx vertexiq init --stack fullstack-cloud-ai</span>
+                  <span className="whitespace-nowrap">$ npx monolith init --stack fullstack-cloud-ai</span>
                 </div>
                 <div className="text-[#a1a1a1] text-[10px] sm:text-xs">
                   ✔ Deploying React, Next.js, Node.js & Spring Boot microservices...<br />

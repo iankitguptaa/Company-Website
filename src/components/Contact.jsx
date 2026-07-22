@@ -88,8 +88,8 @@ export default function Contact({ prefilledService }) {
                 </div>
                 <div>
                   <div className="text-[11px] font-mono text-[#a1a1a1]">EMAIL US</div>
-                  <a href="mailto:contact@vertexiqtech.com" className="text-sm font-bold text-white hover:text-cyan-400">
-                    contact@vertexiqtech.com
+                  <a href="mailto:contact@monolithcodes.com" className="text-sm font-bold text-white hover:text-cyan-400">
+                    contact@monolithcodes.com
                   </a>
                 </div>
               </motion.div>
@@ -150,7 +150,7 @@ export default function Contact({ prefilledService }) {
                 </div>
                 <h4 className="text-2xl font-bold text-white">Message Received!</h4>
                 <p className="text-sm text-[#a1a1a1] max-w-md mx-auto leading-relaxed">
-                  Thank you for reaching out to VertexIQ Technologies. One of our lead software architects will review your requirements and contact you within 12 hours.
+                  Thank you for reaching out to Monolith Codes. One of our lead software architects will review your requirements and contact you within 12 hours.
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.04 }}

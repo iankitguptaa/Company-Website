@@ -7,7 +7,7 @@ export default function Testimonials() {
     {
       id: 1,
       quote:
-        'VertexIQ Technologies delivered our complex SaaS web app ahead of schedule. Their attention to clean architecture, API speed, and modern UI design completely transformed our user acquisition.',
+        'Monolith Codes delivered our complex SaaS web app ahead of schedule. Their attention to clean architecture, API speed, and modern UI design completely transformed our user acquisition.',
       name: 'Sarah Jenkins',
       title: 'CTO & Co-Founder',
       company: 'FinPulse Systems',
@@ -17,7 +17,7 @@ export default function Testimonials() {
     {
       id: 2,
       quote:
-        'Working with VertexIQ felt like having an elite in-house engineering team. They designed our AI workflow automation pipeline with incredible precision, clear daily communication, and zero hidden costs.',
+        'Working with Monolith Codes felt like having an elite in-house engineering team. They designed our AI workflow automation pipeline with incredible precision, clear daily communication, and zero hidden costs.',
       name: 'Marcus Vance',
       title: 'Head of Product',
       company: 'OmniStream Media',
@@ -27,7 +27,7 @@ export default function Testimonials() {
     {
       id: 3,
       quote:
-        'The mobile application they built for iOS and Android achieved a 4.9-star rating on the App Store. VertexIQ handled everything from UI wireframes to AWS deployment seamlessly. Highly recommended!',
+        'The mobile application they built for iOS and Android achieved a 4.9-star rating on the App Store. Monolith Codes handled everything from UI wireframes to AWS deployment seamlessly. Highly recommended!',
       name: 'David Chen',
       title: 'Founder & CEO',
       company: 'HealthConnect Global',
@@ -64,15 +64,15 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-4 mb-16"
         >
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-xs font-mono text-cyan-400">
-            <MessageSquareQuote className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
+            <MessageSquareQuote className="w-3.5 h-3.5 text-cyan-400" />
             CLIENT TRUST & FEEDBACK
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             What Our Partners Say
           </h2>
           <p className="text-base sm:text-lg text-[#a1a1a1]">
-            Don't just take our word for it — hear from founders and tech executives who scaled their products with VertexIQ.
+            Don't just take our word for it — hear from founders and tech executives who scaled their products with Monolith Codes.
           </p>
         </motion.div>
 

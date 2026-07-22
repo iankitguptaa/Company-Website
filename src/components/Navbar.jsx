@@ -96,10 +96,10 @@ export default function Navbar({ onOpenConsultation }) {
             onClick={(e) => handleNavClick(e, '#home', 'home')}
             className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none rounded-lg p-0.5"
           >
-            <div className="relative overflow-hidden rounded-xl border border-white/20 bg-white/10 p-1 sm:p-1.5 backdrop-blur-md transition-transform group-hover:scale-105">
+            <div className="relative overflow-hidden rounded-xl border border-white/20 bg-black p-1 sm:p-1.5 backdrop-blur-md transition-transform group-hover:scale-105">
               <img
                 src="/logo.png"
-                alt="VertexIQ Technologies Logo"
+                alt="Monolith Codes Logo"
                 className="h-6 sm:h-8 w-auto object-contain brightness-110"
                 onError={(e) => {
                   e.target.onerror = null;
@@ -109,10 +109,7 @@ export default function Navbar({ onOpenConsultation }) {
             </div>
             <div className="flex flex-col">
               <span className="text-sm sm:text-lg font-bold tracking-tight text-white flex items-center gap-1">
-                vertex<span className="text-[#0070f3]">IQ</span>
-              </span>
-              <span className="text-[7px] sm:text-[9px] tracking-widest uppercase font-mono text-[#a1a1a1]">
-                Technologies
+                Monolith <span className="text-[#0070f3]">Codes</span>
               </span>
             </div>
           </a>
