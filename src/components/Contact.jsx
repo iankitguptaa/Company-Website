@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Contact({ prefilledService }) {
@@ -117,17 +117,6 @@ export default function Contact({ prefilledService }) {
                   </p>
                 </div>
               </motion.div>
-            </div>
-
-            <div className="p-4 glass-card rounded-2xl space-y-2">
-              <div className="flex items-center gap-2 text-xs font-semibold text-white">
-                <Clock className="w-4 h-4 text-emerald-400" />
-                <span>Rapid 12-Hour SLA Response</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-white">
-                <ShieldCheck className="w-4 h-4 text-cyan-400" />
-                <span>NDA Protected & Confidential</span>
-              </div>
             </div>
           </motion.div>
 

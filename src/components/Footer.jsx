@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono text-white uppercase tracking-wider font-semibold">Quick Links</h4>
+            <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white">Quick Links</h4>
             <ul className="space-y-2 text-xs text-[#a1a1a1]">
               <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
@@ -118,7 +118,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono text-white uppercase tracking-wider font-semibold">Our Services</h4>
+            <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white">Our Services</h4>
             <ul className="space-y-2 text-xs text-[#a1a1a1]">
               <li><a href="#services" className="hover:text-white transition-colors">Custom Software</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Website Development</a></li>
@@ -134,7 +134,7 @@ export default function Footer() {
 
           {/* Direct Contact Info */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono text-white uppercase tracking-wider font-semibold">Contact Info</h4>
+            <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white">Contact Info</h4>
             <ul className="space-y-2.5 text-xs text-[#a1a1a1]">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#0070f3]" />
@@ -153,7 +153,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Bottom Copyright Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#888888] font-mono">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] sm:text-xs text-[#888888] font-medium tracking-wide">
           <div>
             Copyright © {new Date().getFullYear()} Monolith Codes. All rights reserved.
           </div>
