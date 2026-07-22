@@ -148,7 +148,7 @@ export default function Technologies() {
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">{tech.name}</h3>
-                    <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-white/10 border border-white/15 text-[#a1a1a1] group-hover:border-cyan-400/30 group-hover:text-white transition-colors">
+                    <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/10 border border-white/15 text-[#a1a1a1] group-hover:border-cyan-400/30 group-hover:text-white transition-colors">
                       {tech.badge}
                     </span>
                   </div>
@@ -157,7 +157,7 @@ export default function Technologies() {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-cyan-400 pt-3 border-t border-white/5">
+                <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-cyan-400 pt-3 border-t border-white/5">
                   <Check className="w-3.5 h-3.5" />
                   <span>Production Standard</span>
                 </div>

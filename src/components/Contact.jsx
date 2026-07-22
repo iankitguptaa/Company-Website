@@ -43,8 +43,8 @@ export default function Contact({ prefilledService }) {
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#0070f3]/30 via-[#7928ca]/20 to-[#eb367f]/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 text-center max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs font-mono text-cyan-300 backdrop-blur-md border border-white/15">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md border border-white/15">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
               <span>START YOUR DIGITAL TRANSFORMATION</span>
             </div>
 
@@ -69,7 +69,7 @@ export default function Contact({ prefilledService }) {
             className="lg:col-span-5 space-y-8"
           >
             <div>
-              <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider block mb-2">
+              <span className="text-[10px] sm:text-xs font-bold text-cyan-400 uppercase tracking-wider block mb-2">
                 GET IN TOUCH
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-white">
@@ -87,7 +87,7 @@ export default function Contact({ prefilledService }) {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-[#a1a1a1]">EMAIL US</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#a1a1a1]">EMAIL US</div>
                   <a href="mailto:contact@monolithcodes.com" className="text-sm font-bold text-white hover:text-cyan-400">
                     contact@monolithcodes.com
                   </a>
@@ -99,7 +99,7 @@ export default function Contact({ prefilledService }) {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-[#a1a1a1]">CALL US</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#a1a1a1]">CALL US</div>
                   <a href="tel:+15551234567" className="text-sm font-bold text-white hover:text-cyan-400">
                     +1 (555) 123-4567
                   </a>
@@ -111,7 +111,7 @@ export default function Contact({ prefilledService }) {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-[#a1a1a1]">HEADQUARTERS</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#a1a1a1]">HEADQUARTERS</div>
                   <p className="text-sm font-bold text-white">
                     Tech Hub Center, Innovation Drive, CA
                   </p>
@@ -167,7 +167,7 @@ export default function Contact({ prefilledService }) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono text-white font-medium block">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-white block">
                       Full Name <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -182,7 +182,7 @@ export default function Contact({ prefilledService }) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono text-white font-medium block">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-white block">
                       Work Email <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -199,7 +199,7 @@ export default function Contact({ prefilledService }) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono text-white font-medium block">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-white block">
                       Phone Number
                     </label>
                     <input
@@ -213,7 +213,7 @@ export default function Contact({ prefilledService }) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono text-white font-medium block">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-white block">
                       Company / Organization
                     </label>
                     <input
@@ -228,7 +228,7 @@ export default function Contact({ prefilledService }) {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono text-white font-medium block">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-white block">
                     Project Details & Goals <span className="text-red-400">*</span>
                   </label>
                   <textarea

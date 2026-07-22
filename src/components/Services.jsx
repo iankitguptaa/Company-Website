@@ -164,7 +164,7 @@ export default function Services({ onOpenConsultation }) {
                   <div className="absolute top-4 right-4">
                     <motion.span 
                       whileHover={{ scale: 1.08 }}
-                      className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white inline-block"
+                      className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white inline-block"
                     >
                       {service.badge}
                     </motion.span>

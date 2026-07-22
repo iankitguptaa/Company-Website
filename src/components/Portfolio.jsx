@@ -168,7 +168,7 @@ export default function Portfolio({ onOpenConsultation }) {
                       alt={project.title}
                       className="w-full h-full object-cover filter brightness-90 group-hover:brightness-100"
                     />
-                    <div className="absolute top-3 left-3 bg-black/80 text-white font-mono text-[10px] font-semibold px-2.5 py-1 rounded-full backdrop-blur-md border border-white/15">
+                    <div className="absolute top-3 left-3 bg-black/80 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-md border border-white/15">
                       {project.category}
                     </div>
                   </div>
@@ -242,7 +242,7 @@ export default function Portfolio({ onOpenConsultation }) {
               </motion.button>
 
               <div className="space-y-1.5 sm:space-y-2 pr-8">
-                <span className="text-xs font-mono px-2.5 py-1 rounded bg-white/10 text-cyan-400">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/10 text-cyan-400">
                   {selectedProject.category}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-white">{selectedProject.title}</h3>
@@ -257,22 +257,22 @@ export default function Portfolio({ onOpenConsultation }) {
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-xs font-mono text-[#a1a1a1] uppercase tracking-wider mb-1">Key Outcome Metric</h4>
+                  <h4 className="text-[10px] sm:text-xs font-bold text-[#a1a1a1] uppercase tracking-wider mb-1">Key Outcome Metric</h4>
                   <p className="text-sm sm:text-base font-bold text-emerald-400 bg-emerald-950/40 p-3 rounded-xl border border-emerald-500/30">
                     ⚡ {selectedProject.metrics}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-mono text-[#a1a1a1] uppercase tracking-wider mb-1">Architecture & Solution</h4>
+                  <h4 className="text-[10px] sm:text-xs font-bold text-[#a1a1a1] uppercase tracking-wider mb-1">Architecture & Solution</h4>
                   <p className="text-xs sm:text-sm text-[#d4d4d4] leading-relaxed">{selectedProject.details}</p>
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-mono text-[#a1a1a1] uppercase tracking-wider mb-2">Technologies Used</h4>
+                  <h4 className="text-[10px] sm:text-xs font-bold text-[#a1a1a1] uppercase tracking-wider mb-2">Technologies Used</h4>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {selectedProject.tech.map((t, i) => (
-                      <span key={i} className="text-xs font-mono px-2.5 py-1 rounded bg-white/5 border border-white/10 text-white">
+                      <span key={i} className="text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-white/5 border border-white/10 text-white">
                         {t}
                       </span>
                     ))}

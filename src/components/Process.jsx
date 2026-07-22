@@ -138,7 +138,7 @@ export default function Process() {
             >
               {/* Left Info */}
               <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-cyan-400">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white">
                   <span>Phase {processSteps[activeStep].step} of 07</span>
                 </div>
 
@@ -146,7 +146,7 @@ export default function Process() {
                   <h3 className="text-2xl sm:text-3xl font-bold text-white">
                     {processSteps[activeStep].title}
                   </h3>
-                  <p className="text-sm font-medium text-[#a1a1a1] mt-1 font-mono">
+                  <p className="text-xs font-bold uppercase tracking-wider text-cyan-400 mt-1">
                     {processSteps[activeStep].subtitle}
                   </p>
                 </div>
@@ -157,7 +157,7 @@ export default function Process() {
 
                 {/* Deliverables Checklist */}
                 <div className="pt-4 space-y-2">
-                  <span className="text-xs font-mono text-[#a1a1a1] uppercase tracking-wider block">
+                  <span className="text-[10px] sm:text-xs font-bold text-[#a1a1a1] uppercase tracking-wider block">
                     Key Deliverables:
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">

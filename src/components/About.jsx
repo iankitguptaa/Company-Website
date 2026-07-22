@@ -109,12 +109,12 @@ export default function About() {
 
               <div className="space-y-2">
                 <h3 className="text-xl font-bold tracking-tight text-white">Monolith Codes</h3>
-                <p className="text-xs text-[#a1a1a1] max-w-sm mx-auto font-mono">
+                <p className="text-[10px] font-semibold tracking-wider uppercase text-[#a1a1a1] max-w-sm mx-auto">
                   Custom Software • Web & Mobile
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-center gap-6 text-xs text-[#d4d4d4] font-mono">
+              <div className="pt-4 border-t border-white/10 flex items-center justify-center gap-6 text-[10px] font-bold uppercase tracking-wider text-[#d4d4d4]">
                 <span className="flex items-center gap-1">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" /> Enterprise Grade
                 </span>
@@ -158,7 +158,7 @@ export default function About() {
                   {stat.value}
                 </div>
                 <div className="text-xs font-bold text-white mt-1">{stat.label}</div>
-                <div className="text-[11px] text-[#a1a1a1] font-mono mt-0.5">{stat.sub}</div>
+                <div className="text-[9px] font-bold uppercase tracking-wider text-[#a1a1a1] mt-0.5">{stat.sub}</div>
               </motion.div>
             );
           })}
