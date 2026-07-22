@@ -154,10 +154,10 @@ export default function About() {
                 >
                   <StatIcon className="w-5 h-5" />
                 </motion.div>
-                <div className="text-3xl sm:text-4xl font-black tracking-tight text-white font-mono group-hover:text-cyan-400 transition-colors">
+                <div className="text-3xl sm:text-4xl font-black tracking-tight text-white group-hover:text-cyan-400 transition-colors">
                   {stat.value}
                 </div>
-                <div className="text-xs font-bold text-white mt-1">{stat.label}</div>
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white mt-1">{stat.label}</div>
                 <div className="text-[9px] font-bold uppercase tracking-wider text-[#a1a1a1] mt-0.5">{stat.sub}</div>
               </motion.div>
             );

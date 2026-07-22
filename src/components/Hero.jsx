@@ -139,10 +139,10 @@ export default function Hero({ onOpenConsultation }) {
                 whileHover={{ scale: 1.05 }}
                 className="space-y-0.5 sm:space-y-1 p-2 rounded-xl transition-colors hover:bg-white/5"
               >
-                <div className="text-2xl sm:text-5xl font-black text-white tracking-tight font-mono drop-shadow">
+                <div className="text-2xl sm:text-5xl font-black text-white tracking-tight drop-shadow">
                   {stat.value}
                 </div>
-                <div className="text-[9px] sm:text-xs font-mono text-[#a1a1a1] tracking-wider sm:tracking-widest uppercase font-semibold">
+                <div className="text-[10px] sm:text-xs font-bold text-[#a1a1a1] tracking-wider uppercase">
                   {stat.label}
                 </div>
               </motion.div>
