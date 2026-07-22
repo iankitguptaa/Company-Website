@@ -89,13 +89,13 @@ export default function ConsultationModal({ isOpen, onClose, selectedService }) 
                 </div>
 
                 {selectedService && (
-                  <div className="p-2.5 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-cyan-400 truncate">
+                  <div className="p-2.5 bg-white/5 border border-white/10 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider text-cyan-400 truncate">
                     Selected Interest: <span className="text-white font-semibold">{selectedService}</span>
                   </div>
                 )}
 
                 <div className="space-y-1">
-                  <label className="text-xs font-mono text-white">Full Name *</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-white">Full Name *</label>
                   <input
                     type="text"
                     required
@@ -107,7 +107,7 @@ export default function ConsultationModal({ isOpen, onClose, selectedService }) 
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-mono text-white">Work Email *</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-white">Work Email *</label>
                   <input
                     type="email"
                     required
@@ -120,7 +120,7 @@ export default function ConsultationModal({ isOpen, onClose, selectedService }) 
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <label className="text-xs font-mono text-white">Phone</label>
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-white">Phone</label>
                     <input
                       type="tel"
                       value={formData.phone}
@@ -130,7 +130,7 @@ export default function ConsultationModal({ isOpen, onClose, selectedService }) 
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-mono text-white">Company</label>
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-white">Company</label>
                     <input
                       type="text"
                       value={formData.company}
@@ -142,7 +142,7 @@ export default function ConsultationModal({ isOpen, onClose, selectedService }) 
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-mono text-white">Project Brief *</label>
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-white">Project Brief *</label>
                   <textarea
                     rows={3}
                     required
