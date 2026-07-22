@@ -107,10 +107,10 @@ export default function About() {
                 />
               </motion.div>
 
-              <div className="space-y-2">
-                <h3 className="text-xl font-bold tracking-tight text-white">Monolith Codes</h3>
-                <p className="text-[10px] font-semibold tracking-wider uppercase text-[#a1a1a1] max-w-sm mx-auto">
-                  Custom Software • Web & Mobile
+              <div className="space-y-1">
+                <h3 className="text-xl font-bold tracking-tight text-white leading-none">Monolith Codes</h3>
+                <p className="text-[9px] font-bold tracking-[0.18em] uppercase text-[#a1a1a1] max-w-sm mx-auto leading-none pt-1">
+                  Code<span className="text-[#0070f3]">.</span> Innovate<span className="text-[#0070f3]">.</span> Elevate<span className="text-[#0070f3]">.</span>
                 </p>
               </div>
 

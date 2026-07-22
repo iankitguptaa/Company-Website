@@ -108,8 +108,11 @@ export default function Navbar({ onOpenConsultation }) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-lg font-bold tracking-tight text-white flex items-center gap-1">
+              <span className="text-sm sm:text-lg font-bold tracking-tight text-white flex items-center gap-1 leading-none">
                 Monolith <span className="text-[#0070f3]">Codes</span>
+              </span>
+              <span className="text-[7px] sm:text-[8px] font-bold tracking-[0.12em] sm:tracking-[0.18em] text-[#a1a1a1] uppercase mt-1 leading-none">
+                Code<span className="text-[#0070f3]">.</span> Innovate<span className="text-[#0070f3]">.</span> Elevate<span className="text-[#0070f3]">.</span>
               </span>
             </div>
           </a>

@@ -34,9 +34,14 @@ export default function Footer() {
                   }}
                 />
               </motion.div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                Monolith <span className="text-[#0070f3]">Codes</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-tight text-white leading-none">
+                  Monolith <span className="text-[#0070f3]">Codes</span>
+                </span>
+                <span className="text-[9px] font-bold tracking-[0.18em] text-[#a1a1a1] uppercase mt-1.5 leading-none">
+                  Code<span className="text-[#0070f3]">.</span> Innovate<span className="text-[#0070f3]">.</span> Elevate<span className="text-[#0070f3]">.</span>
+                </span>
+              </div>
             </div>
 
             <p className="text-xs text-[#a1a1a1] leading-relaxed max-w-sm">
