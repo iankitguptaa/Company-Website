@@ -9,7 +9,7 @@ export default function Technologies() {
 
   const techStack = [
     {
-      name: 'React',
+      name: 'React.js',
       category: 'Frontend',
       badge: 'Library',
       description: 'Declarative component-driven UI development for modern web applications.',
