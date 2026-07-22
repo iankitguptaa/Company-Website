@@ -3,15 +3,8 @@ import { ArrowRight, Sparkles, Terminal, CheckCircle2, ShieldCheck, Zap, Server,
 import { motion } from 'framer-motion';
 
 export default function Hero({ onOpenConsultation }) {
-  const heroStats = [
-    { value: '50+', label: 'PROJECTS DELIVERED' },
-    { value: '25+', label: 'HAPPY CLIENTS' },
-    { value: '2+', label: 'YEARS EXPERIENCE' },
-    { value: '99%', label: 'CLIENT SATISFACTION' },
-  ];
-
   return (
-    <section id="home" className="relative min-h-[90vh] flex flex-col justify-between pt-28 sm:pt-36 pb-16 sm:pb-20 overflow-hidden bg-[#08080c]">
+    <section id="home" className="relative min-h-[90vh] flex flex-col justify-center pt-28 sm:pt-36 pb-16 sm:pb-20 overflow-hidden bg-[#08080c]">
       {/* Full-Bleed Iconic IT Software Engineering Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
@@ -123,33 +116,6 @@ export default function Hero({ onOpenConsultation }) {
           </motion.div>
         </div>
       </div>
-
-      {/* Hero Stats Row */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="relative z-10 border-t border-white/15 bg-black/70 backdrop-blur-md py-6 sm:py-8"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-            {heroStats.map((stat, idx) => (
-              <motion.div 
-                key={idx} 
-                whileHover={{ scale: 1.05 }}
-                className="space-y-0.5 sm:space-y-1 p-2 rounded-xl transition-colors hover:bg-white/5"
-              >
-                <div className="text-2xl sm:text-5xl font-black text-white tracking-tight drop-shadow">
-                  {stat.value}
-                </div>
-                <div className="text-[10px] sm:text-xs font-bold text-[#a1a1a1] tracking-wider uppercase">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }

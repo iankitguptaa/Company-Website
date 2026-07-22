@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Technologies() {
   const [activeTab, setActiveTab] = useState('All');
 
-  const categories = ['All', 'Frontend', 'Backend', 'Database'];
+  const categories = ['All', 'Frontend', 'Backend', 'Database', 'UI/UX', 'DevOps'];
 
   const techStack = [
     {
@@ -19,6 +19,12 @@ export default function Technologies() {
       category: 'Frontend',
       badge: 'Framework',
       description: 'React framework for Server-Side Rendering, App Router, and static site generation.',
+    },
+    {
+      name: 'Tailwind CSS',
+      category: 'Frontend',
+      badge: 'CSS Framework',
+      description: 'Utility-first CSS framework for rapid, highly custom, and fully responsive user interface styling.',
     },
     {
       name: 'Node.js',
@@ -63,8 +69,14 @@ export default function Technologies() {
       description: 'Advanced open-source object-relational database with ACID compliance and JSON support.',
     },
     {
+      name: 'Figma',
+      category: 'UI/UX',
+      badge: 'Design Tool',
+      description: 'Vector-based collaborative design and prototyping tool for modern web and mobile UI/UX.',
+    },
+    {
       name: 'GitHub',
-      category: 'Cloud & DevOps',
+      category: 'DevOps',
       badge: 'CI/CD & Code',
       description: 'Version control, code collaboration, automated GitHub Actions, and deployment workflows.',
     },
